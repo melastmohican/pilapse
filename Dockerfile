@@ -1,7 +1,8 @@
 FROM balenalib/raspberry-pi-python:3.7
 
 COPY ./requirements.txt /requirements.txt
-RUN READTHEDOCS=True pip install -r /requirements.txt
+ENV READTHEDOCS=True
+RUN pip install -r /requirements.txt
 
 VOLUME /var/image/
 COPY . .
