@@ -32,8 +32,10 @@ jobs:
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
-            docker build . --build-arg READTHEDOCS=True --file Dockerfile
+            docker build . --file Dockerfile
           fi
+        env:
+          READTHEDOCS: True
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
@@ -49,6 +51,8 @@ jobs:
 
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
+        env:
+          READTHEDOCS: True
 
       - name: Log into GitHub Container Registry
       # TODO: Create a PAT with `read:packages` and `write:packages` scopes and save it as an Actions secret `CR_PAT`
