@@ -1,6 +1,7 @@
 FROM balenalib/raspberry-pi-python:3.7
 COPY . .
 ENTRYPOINT ["entrypoint.sh"]
+RUN chmod +x docker-entrypoint.sh
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
 ENV READTHEDOCS True
