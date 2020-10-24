@@ -2,10 +2,10 @@ import os
 from datetime import datetime
 from time import sleep
 
-if os.uname()[1] == 'raspberrypi':
-    from picamera import PiCamera
-else:
-    from mock_picamera.camera import PiCamera
+#if os.uname()[1] == 'raspberrypi':
+from picamera import PiCamera
+#else:
+#    from mock_picamera.camera import PiCamera
 
 
 def get_path(base_dir):
@@ -13,9 +13,8 @@ def get_path(base_dir):
     os.makedirs(full_path, exist_ok=True)
     return full_path
 
-
+# print(os.uname()[1])
 base_dir = '/var/image'
-
 path = get_path(base_dir)
 camera = PiCamera()
 camera.resolution = (1920, 1080)
