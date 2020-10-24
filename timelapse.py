@@ -15,7 +15,6 @@ def get_path(base_dir):
 
 # print(os.uname()[1])
 base_dir = '/var/image'
-path = get_path(base_dir)
 camera = PiCamera(resolution=(1920, 1080))
 # Set ISO to the desired value
 camera.iso = 100
@@ -29,6 +28,6 @@ camera.awb_mode = 'off'
 camera.awb_gains = g
 camera.start_preview()
 sleep(2)
-for filename in camera.capture_continuous(path + '/img{counter:05d}.jpg'):
+for filename in camera.capture_continuous(get_path(base_dir) + '/img{counter:05d}.jpg'):
     print('Captured %s' % filename)
     sleep(60)  # wait 1 minutes
