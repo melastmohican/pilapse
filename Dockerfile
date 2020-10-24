@@ -8,5 +8,5 @@ RUN pip install -v -r /requirements.txt
 
 VOLUME /var/image/
 COPY . .
-ENTRYPOINT []
+#ENTRYPOINT []
 CMD ["python", "timelapse.py"]
