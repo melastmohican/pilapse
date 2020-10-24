@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 # For caching until requirements.txt changes
 ENV READTHEDOCS True
 COPY ./requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt
+RUN pip install -v -r /requirements.txt
 
 VOLUME /var/image/
 COPY . .
