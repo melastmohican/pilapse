@@ -31,6 +31,6 @@ camera.start_preview()
 try:
     for filename in camera.capture_continuous(get_path(base_dir) + '/img{counter:05d}.jpg'):
         print('Captured %s' % filename)
-        sleep(60)  # wait 1 minutes
+        sleep(30)  # wait 30 seconds
 finally:
     camera.stop_preview()
