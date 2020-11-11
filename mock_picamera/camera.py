@@ -7,10 +7,11 @@ class PiCamera(object):
 
     def __init__(self, *args, **kwargs):
         print('WARNING: Mocked PiCamera on {}'.format(os.uname()))
-        self.resolution = None
+        self.resolution = kwargs.pop('resolution', None)
         self.shutter_speed = None
         self.exposure_speed = None
         self.awb_gains = None
+        self.rotation = None
         pass
 
     def start_preview(self, **options):
