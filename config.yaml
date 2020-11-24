@@ -4,6 +4,6 @@ resolution:
 # ISO value. 0 = auto, 60-800 for manual ISO.
 iso: 100
 # Rotate the images taken by the camera. Possible value are 0, 90, 180 or 270
-rotation: 90
+rotation: 0
 # Wait time in seconds
 wait: 30
